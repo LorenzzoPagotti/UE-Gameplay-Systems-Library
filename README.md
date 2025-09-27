@@ -34,6 +34,7 @@ A flexible, event-driven interaction component. It allows any character to inter
     * [`UInteractionComponent.cpp`](Source/NewPortfolio/Private/InteractionComponent.cpp)
     * [`BaseInteractableActor.h`](Source/NewPortfolio/Public/BaseInteractableActor.h)
     * [`BaseInteractableActor.cpp`](Source/NewPortfolio/Private/BaseInteractableActor.cpp)
+    * 
     *(Requires an `InteractionInterface` to be implemented on Actors that are not parent from BaseInteractableActor)*
 
 * **Features:**
@@ -106,6 +107,7 @@ Um componente de interação flexível e orientado a eventos. Ele permite que qu
     * [`UInteractionComponent.cpp`](Source/NewPortfolio/Private/InteractionComponent.cpp)
     * [`BaseInteractableActor.h`](Source/NewPortfolio/Public/BaseInteractableActor.h)
     * [`BaseInteractableActor.cpp`](Source/NewPortfolio/Private/BaseInteractableActor.cpp)
+    * 
     * *(Requer que uma `InteractionInterface` seja implementada nos Actors que não são filhos da classe BaseInteractableItem.)*
 
 * **Funcionalidades:**
