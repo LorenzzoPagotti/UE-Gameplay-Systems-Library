@@ -3,26 +3,37 @@
 #include "BehaviorTree/BehaviorTree.h"
 #include "Perception/AIPerceptionComponent.h"
 #include "Perception/AISenseConfig_Sight.h"
+#include "Perception/AISenseConfig_Hearing.h"
 
 ACustomAIController::ACustomAIController()
 {
 
-	MyPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("PerceptionComponent"));
+	MyPerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("SightPerceptionComponent"));
 
 	UAISenseConfig_Sight* SightConfig = CreateDefaultSubobject<UAISenseConfig_Sight>(TEXT("SightConfig"));
 
-		SightConfig->SightRadius = AISightRadius;
-		SightConfig->LoseSightRadius = AILoseSightRadius;
+	SightConfig->SightRadius = AISightRadius;
+	SightConfig->LoseSightRadius = AILoseSightRadius;
 
-		SightConfig->PeripheralVisionAngleDegrees = AIVisionAngleDegrees;
+	SightConfig->PeripheralVisionAngleDegrees = AIVisionAngleDegrees;
 
-		SightConfig->DetectionByAffiliation.bDetectEnemies = true;
-		SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
-		SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
+	SightConfig->DetectionByAffiliation.bDetectEnemies = true;
+	SightConfig->DetectionByAffiliation.bDetectNeutrals = true;
+	SightConfig->DetectionByAffiliation.bDetectFriendlies = true;
 
 	MyPerceptionComponent->ConfigureSense(*SightConfig);
 
 	MyPerceptionComponent->SetDominantSense(SightConfig->GetSenseImplementation());
+
+	UAISenseConfig_Hearing* HearingConfig = CreateDefaultSubobject<UAISenseConfig_Hearing>(TEXT("HearingConfig"));
+
+	HearingConfig->HearingRange = MaxHearingRange;
+
+	HearingConfig->DetectionByAffiliation.bDetectEnemies = true;
+	HearingConfig->DetectionByAffiliation.bDetectNeutrals = true;
+	HearingConfig->DetectionByAffiliation.bDetectFriendlies = true;
+
+	MyPerceptionComponent->ConfigureSense(*HearingConfig);
 
 }
 
@@ -46,16 +57,29 @@ void ACustomAIController::BeginPlay()
 
 void ACustomAIController::OnTargetPerceptionUpdated(AActor* Actor, FAIStimulus Stimulus)
 {
-	bool bSuccessfullySensed = Stimulus.WasSuccessfullySensed(); // Successfully sensed the Actor?
 
-	if (bSuccessfullySensed && Actor->ActorHasTag("Detectable")) // Sensed
+	if (Actor && Actor->ActorHasTag("Detectable"))
 	{
-		GetBlackboardComponent()->SetValueAsObject(SensedActorKeyName, Actor); // Set the blackboard key to the actor sensed
-		GetBlackboardComponent()->SetValueAsBool(LineOfSightKeyName, true); // Set Line of Sight to True if the user wants to add further mechanics.
-	}
-	else // Not Sensed (or lost the vision)
-	{
-		GetBlackboardComponent()->SetValueAsObject(SensedActorKeyName, nullptr); // Set the blackboard key to null
-		GetBlackboardComponent()->SetValueAsBool(LineOfSightKeyName, false); // set line of sight to false.
+		if (Stimulus.Type == UAISense::GetSenseID<UAISense_Sight>())
+		{
+			bool bSuccessfullySensed = Stimulus.WasSuccessfullySensed(); // Successfully sensed the Actor?
+
+			if (bSuccessfullySensed)
+			{
+				GetBlackboardComponent()->SetValueAsObject(SensedActorKeyName, Actor); // Set the Sensed Actor blackboard key to the actor sensed
+				GetBlackboardComponent()->SetValueAsBool(LineOfSightKeyName, true); // Set Line of Sight to True if the user wants to add further mechanics.
+			}
+			else
+			{
+				GetBlackboardComponent()->SetValueAsObject(SensedActorKeyName, nullptr); // Set the Sensed Actor blackboard key to null
+				GetBlackboardComponent()->SetValueAsBool(LineOfSightKeyName, false); // set line of sight to false.
+			}
+		}
+		else if (Stimulus.Type == UAISense::GetSenseID<UAISense_Hearing>())
+		{
+			FVector StimulusTriggerLocation = Stimulus.StimulusLocation;
+
+			GetBlackboardComponent()->SetValueAsVector(LastKnownLocationKeyName, StimulusTriggerLocation);
+		}
 	}
 }

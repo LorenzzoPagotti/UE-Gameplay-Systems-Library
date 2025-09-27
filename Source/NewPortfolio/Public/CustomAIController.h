@@ -31,7 +31,7 @@ protected:
 
 	// BehaviorTree and the Perception Component for the AI
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AI Perceptions")
 	TObjectPtr<UAIPerceptionComponent> MyPerceptionComponent;
 
 	UPROPERTY(EditAnywhere, Category = "AI")
@@ -50,6 +50,11 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "AI | Sense Config")
 	float AIVisionAngleDegrees = 90.0f;
 
+	// Hearing Sense Configuration Variables
+
+	UPROPERTY(EditAnywhere, Category = "AI | Hearing Config")
+	float MaxHearingRange = 2000.0f;
+
 	// Blackboard Key Variables
 
 	/** This is the blackboard key responsible to storage the sensed actor reference. */
@@ -59,5 +64,8 @@ protected:
 	/** This is the blackboard key responsible to storage the answer to: Am i seeing someone? */
 	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
 	FName LineOfSightKeyName = "HasLineOfSight";
-	
+
+	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
+	FName LastKnownLocationKeyName = "LastKnownLocation";
+
 };
