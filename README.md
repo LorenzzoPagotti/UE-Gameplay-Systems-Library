@@ -21,7 +21,7 @@ A foundational AI system featuring a custom C++ AI Controller that uses Unreal's
 
 * **Features:**
     * Custom C++ `AIController` as the AI's "brain".
-    * Optimized player detection using `AIPerceptionComponent` (Sight).
+    * Optimized player detection using `AIPerceptionComponent` (Sight and Hearing).
     * Modular logic via `Behavior Tree` and `Blackboard`.
     * Custom C++ `BTTasks` for actions like finding valid patrol points on the NavMesh and changing speed.
     * Highly configurable in the editor, using `FName` variables for Blackboard keys to avoid hard-coded strings.
@@ -93,7 +93,7 @@ Um sistema de IA fundamental que apresenta um `AIController` customizado em C++ 
 
 * **Funcionalidades:**
     * `AIController` customizado em C++ como o "cérebro" da IA.
-    * Detecção de jogador otimizada com `AIPerceptionComponent` (Visão).
+    * Detecção de jogador otimizada com `AIPerceptionComponent` (Visão e Audição).
     * Lógica modular com `Behavior Tree` e `Blackboard`.
     * `BTTasks` customizadas em C++ para ações como encontrar pontos de patrulha válidos na NavMesh e alterar a velocidade.
     * Altamente configurável no editor, usando variáveis `FName` para as chaves do Blackboard para evitar texto hard-coded.
