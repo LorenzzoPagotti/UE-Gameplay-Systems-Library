@@ -73,13 +73,17 @@ void ACustomAIController::OnTargetPerceptionUpdated(AActor* Actor, FAIStimulus S
 			{
 				GetBlackboardComponent()->SetValueAsObject(SensedActorKeyName, nullptr); // Set the Sensed Actor blackboard key to null
 				GetBlackboardComponent()->SetValueAsBool(LineOfSightKeyName, false); // set line of sight to false.
+
+				FVector PlayerLocation = Stimulus.StimulusLocation;
+
+				GetBlackboardComponent()->SetValueAsVector(LastKnownLocationKeyName, PlayerLocation);
 			}
 		}
 		else if (Stimulus.Type == UAISense::GetSenseID<UAISense_Hearing>())
 		{
 			FVector StimulusTriggerLocation = Stimulus.StimulusLocation;
 
-			GetBlackboardComponent()->SetValueAsVector(LastKnownLocationKeyName, StimulusTriggerLocation);
+			GetBlackboardComponent()->SetValueAsVector(SoundLocationKeyName, StimulusTriggerLocation);
 		}
 	}
 }

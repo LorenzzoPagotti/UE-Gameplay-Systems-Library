@@ -68,4 +68,7 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
 	FName LastKnownLocationKeyName = "LastKnownLocation";
 
+	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
+	FName SoundLocationKeyName = "SoundLocation";
+
 };
