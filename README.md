@@ -11,7 +11,7 @@ This project serves as a living portfolio of my work as a Gameplay Programmer.
 This library currently contains the following systems:
 
 ### 1. AI System (Patrol & Chase)
-A foundational AI system featuring a custom C++ AI Controller that uses Unreal's Perception System and a Behavior Tree to drive behavior. The AI autonomously patrols an area, detects players via sight, and gives chase.
+A foundational AI system featuring a custom C++ AI Controller that uses Unreal's Perception System and a Behavior Tree to drive behavior. The AI autonomously patrols an area, detects players via sight, and gives chase. If the AI loses sight, it instantly go to the last known location and start searching for the player.
 
 * **Key Source Files:**
     * [`ACustomAIController.h`](Source/NewPortfolio/Public/CustomAIController.h)
@@ -83,7 +83,7 @@ Este projeto serve como um portfólio vivo do meu trabalho como Programador de G
 Atualmente, esta biblioteca contém os seguintes sistemas:
 
 ### 1. Sistema de IA (Patrulha e Perseguição)
-Um sistema de IA fundamental que apresenta um `AIController` customizado em C++ que usa o Sistema de Percepção da Unreal e uma `Behavior Tree` para guiar o comportamento. A IA patrulha uma área de forma autônoma, detecta jogadores através da visão e os persegue.
+Um sistema de IA fundamental que apresenta um `AIController` customizado em C++ que usa o Sistema de Percepção da Unreal e uma `Behavior Tree` para guiar o comportamento. A IA patrulha uma área de forma autônoma, detecta jogadores através da visão e os persegue. Se ela perder o jogador de vista, ela instantaneamente vai até a última localização conhecida do jogador e procura pelo jogador.
 
 * **Principais Arquivos de Código:**
     * [`ACustomAIController.h`](Source/NewPortfolio/Public/CustomAIController.h)
