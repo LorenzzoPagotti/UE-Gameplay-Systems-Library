@@ -53,7 +53,20 @@ A plug-and-play Actor Component that adds a complete stamina and sprint mechanic
     * Written in C++ for maximum performance.
     * Plug-and-play design.
     * All variables (`MaxStamina`, `RegenRate`, `SprintSpeed`, etc.) are exposed to Blueprints for easy iteration.
+ 
+### 4. Health Component
+A plug-and-play Actor Component that adds a modular Health system to any character. All parameters, functions and variables are exposed to Blueprints for easy tweaking by designers and rapid iterations.
 
+* **Key Source Files:**
+    * [`UHealthComponent.h`](Source/NewPortfolio/Public/HealthComponent.h)
+    * [`UHealthComponent.cpp`](Source/NewPortfolio/Private/HealthComponent.cpp)
+
+* **Features:**
+    * Written in C++ for maximum performance.
+    * Plug-and-play design.
+    * All variables (`MaxHealth`, `MinHealth`, `IsDead`, etc.) are exposed to Blueprints for easy iteration.
+    * All functions (`Die()`, `TakeDamage()`, `RegenerateHealth()`, etc.) are all exposed to blueprints.
+ 
 ---
 
 ## How to Use This Repository
@@ -125,6 +138,19 @@ Um Componente de Ator plug-and-play que adiciona uma mecânica completa de stami
     * Escrito em C++ para máxima performance.
     * Design plug-and-play.
     * Todas as variáveis (`MaxStamina`, `RegenRate`, `SprintSpeed`, etc.) são expostas para Blueprints para iteração rápida.
+ 
+### 4. Componente de Vida
+Um Actor Component também Plug-and-Play que implementa um sistema modular e completo de vida em qualquer ator ou personagem. Todas as funções, variáveis e parâmetros são expostos para blueprint para, além de ajudar nos ajustes rápidos por designers, também implementar lógicas customizadas via Blueprint, se for da preferência do usuário.
+
+* **Principais Arquivos de Código:**
+    * [`UHealthComponent.h`](Source/NewPortfolio/Public/HealthComponent.h)
+    * [`UHealthComponent.cpp`](Source/NewPortfolio/Private/HealthComponent.cpp)
+
+* **Funcionalidades:**
+    * Escrito inteiramente em C++ para máxima performance.
+    * Plug-and-play design.
+    * Todas as variáveis (`MaxHealth`, `MinHealth`, `IsDead`, etc.) são expostas para blueprint para fácil iteração.
+    * As funções (`Die()`, `TakeDamage()`, `RegenerateHealth()`, etc.) estão todas expostas para blueprints também.
 
 ---
 
