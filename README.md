@@ -18,6 +18,7 @@ A foundational AI system featuring a custom C++ AI Controller that uses Unreal's
     * [`ACustomAIController.cpp`](Source/NewPortfolio/Private/CustomAIController.cpp)
     * [`BTTask_FindRandomPatrolLocation.cpp`](Source/NewPortfolio/Private/BTTask_FindRandomPatrolLocation.cpp)
     * [`BTTask_ChangeSpeed.cpp`](Source/NewPortfolio/Private/BTTask_ChangeSpeed.cpp)
+    * [`BTTask_Attack.cpp`](Source/NewPortfolio/Private/BTTask_Attack.cpp) [WORK IN PROGRESS]
 
 * **Features:**
     * Custom C++ `AIController` as the AI's "brain".
@@ -105,6 +106,7 @@ Um sistema de IA fundamental que apresenta um `AIController` customizado em C++ 
     * [`ACustomAIController.cpp`](Source/NewPortfolio/Private/CustomAIController.cpp)
     * [`BTTask_FindRandomPatrolLocation.cpp`](Source/NewPortfolio/Private/BTTask_FindRandomPatrolLocation.cpp)
     * [`BTTask_ChangeSpeed.cpp`](Source/NewPortfolio/Private/BTTask_ChangeSpeed.cpp)
+    * [`BTTask_Attack.cpp`](Source/NewPortfolio/Private/BTTask_Attack.cpp) [WORK IN PROGRESS]
 
 * **Funcionalidades:**
     * `AIController` customizado em C++ como o "cérebro" da IA.
