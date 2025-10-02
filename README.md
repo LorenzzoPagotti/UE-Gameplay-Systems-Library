@@ -60,6 +60,8 @@ A plug-and-play Actor Component that adds a modular Health system to any charact
 * **Key Source Files:**
     * [`UHealthComponent.h`](Source/NewPortfolio/Public/HealthComponent.h)
     * [`UHealthComponent.cpp`](Source/NewPortfolio/Private/HealthComponent.cpp)
+    * [`UHealthInterface.h`](Source/NewPortfolio/Public/HealthInterface.h)
+    * [`UHealthInterface.cpp`](Source/NewPortfolio/Private/HealthInterface.cpp)
 
 * **Features:**
     * Written in C++ for maximum performance.
@@ -145,6 +147,8 @@ Um Actor Component também Plug-and-Play que implementa um sistema modular e com
 * **Principais Arquivos de Código:**
     * [`UHealthComponent.h`](Source/NewPortfolio/Public/HealthComponent.h)
     * [`UHealthComponent.cpp`](Source/NewPortfolio/Private/HealthComponent.cpp)
+    * [`UHealthInterface.h`](Source/NewPortfolio/Public/HealthInterface.h)
+    * [`UHealthInterface.cpp`](Source/NewPortfolio/Private/HealthInterface.cpp)
 
 * **Funcionalidades:**
     * Escrito inteiramente em C++ para máxima performance.
