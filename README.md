@@ -67,7 +67,7 @@ A plug-and-play Actor Component that adds a modular Health system to any charact
     * Written in C++ for maximum performance.
     * Plug-and-play design.
     * All variables (`MaxHealth`, `MinHealth`, `IsDead`, etc.) are exposed to Blueprints for easy iteration.
-    * All functions (`Die()`, `TakeDamage()`, `RegenerateHealth()`, etc.) are all exposed to blueprints.
+    * All functions (`Die()`, `DamagePlayer()`, `HealPlayer()`, etc.) are all exposed to blueprints.
  
 ---
 
@@ -154,7 +154,7 @@ Um Actor Component também Plug-and-Play que implementa um sistema modular e com
     * Escrito inteiramente em C++ para máxima performance.
     * Plug-and-play design.
     * Todas as variáveis (`MaxHealth`, `MinHealth`, `IsDead`, etc.) são expostas para blueprint para fácil iteração.
-    * As funções (`Die()`, `TakeDamage()`, `RegenerateHealth()`, etc.) estão todas expostas para blueprints também.
+    * As funções (`Die()`, `HealPlayer()`, `DamagePlayer()`, etc.) estão todas expostas para blueprints também.
 
 ---
 
