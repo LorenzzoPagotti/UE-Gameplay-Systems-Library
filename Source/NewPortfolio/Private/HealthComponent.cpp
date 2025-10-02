@@ -5,7 +5,7 @@ UHealthComponent::UHealthComponent()
 	
 }
 
-void UHealthComponent::TakeDamage(float DamageDealt)
+void UHealthComponent::DamagePlayer(float DamageDealt)
 {
 	if (bIsDead)
 	{
@@ -18,13 +18,15 @@ void UHealthComponent::TakeDamage(float DamageDealt)
 	{
 		bIsDead = true;
 		Die(); // Set IsDead to true and calls the Die function.
+
+		OnPlayerDeath.Broadcast(GetOwner()); // Communicate the player death.
 	}
 
 	OnHealthChanged.Broadcast(CurrentHealth); // Updates the widget.
 
 }
 
-void UHealthComponent::RegenerateHealth(float HealthToRegenerate)
+void UHealthComponent::HealPlayer(float HealthToRegenerate)
 {
 	if (bIsDead)
 	{
@@ -34,6 +36,15 @@ void UHealthComponent::RegenerateHealth(float HealthToRegenerate)
 	CurrentHealth = FMath::Clamp(CurrentHealth + HealthToRegenerate, MinHealth, MaxHealth); // Clamping the health between Minimum and Maximum health possible.
 
 	OnHealthChanged.Broadcast(CurrentHealth); // Updates the Widget.
+}
+
+float UHealthComponent::GetHealthPercentage() const
+{
+	if (MaxHealth <= 0.0f)
+	{
+		return 0.0f;
+	}
+	return CurrentHealth / MaxHealth;
 }
 
 void UHealthComponent::BeginPlay()

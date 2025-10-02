@@ -4,6 +4,7 @@
 #include "HealthComponent.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnHealthChanged, float, NewHealth);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnPlayerDeath, AActor*, DeadPlayer);
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -18,13 +19,20 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = HealthWidget)
 	FOnHealthChanged OnHealthChanged;
 
+	/** The blueprint custom event that runs once when the player dies. */
+	UPROPERTY(BlueprintAssignable, Category = DeathWidget)
+	FOnPlayerDeath OnPlayerDeath;
+
 	/** The function that is responsible for dealing damage (take health) of the player. */
 	UFUNCTION(BlueprintCallable, Category = Health)
-	void TakeDamage(float DamageDealt);
+	void DamagePlayer(float DamageDealt);
 
 	/** The function that is responsible for regenerating health (increase health) of the player. */
 	UFUNCTION(BlueprintCallable, Category = Health)
-	void RegenerateHealth(float HealthToRegenerate);
+	void HealPlayer(float HealthToRegenerate);
+
+	UFUNCTION(BlueprintPure, Category = Health)
+	float GetHealthPercentage() const;
 
 	virtual void BeginPlay() override;
 
@@ -39,7 +47,7 @@ protected:
 	float MinHealth = 0.0f;
 
 	/** This variable will be the health the player starts. Ideally, it should be the same as MaxHealth. It is initialized on BeginPlay. */
-	UPROPERTY (EditAnywhere, BlueprintReadOnly, Category = Health)
+	UPROPERTY (BlueprintReadOnly, Category = Health)
 	float CurrentHealth;
 
 	/** Bool variable that stores the information about the player death state */
