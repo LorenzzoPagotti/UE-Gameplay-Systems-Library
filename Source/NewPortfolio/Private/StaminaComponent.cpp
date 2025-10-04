@@ -55,6 +55,10 @@ float UStaminaComponent::GetCurrentStamina() const
 
 void UStaminaComponent::DrainStamina(float DeltaTime)
 {
+	if (!MovementComponent || MovementComponent->GetCurrentAcceleration().IsNearlyZero())
+	{
+			return;
+	}
 	CurrentStamina = FMath::Clamp(CurrentStamina - StaminaDrainRate * DeltaTime, 0.0f, MaxStamina); // Drains the Stamina and Clamps it to a minimum of 0 and maximum of MaxStamina.
 	if (CurrentStamina <= 0.0f) // Stops the Sprint immediatly if the user is sprinting with 0 stamina
 	{
@@ -76,11 +80,11 @@ void UStaminaComponent::RegenStamina(float DeltaTime)
 
 void UStaminaComponent::StartSprinting()
 {
-	if (bCanSprint && MovementComponent)
-	{
-		bIsSprinting = true;
-		MovementComponent->MaxWalkSpeed = SprintSpeed;
-	}
+		if (bCanSprint && MovementComponent)
+		{
+			bIsSprinting = true;
+			MovementComponent->MaxWalkSpeed = SprintSpeed;
+		}
 }
 
 void UStaminaComponent::StopSprinting()
