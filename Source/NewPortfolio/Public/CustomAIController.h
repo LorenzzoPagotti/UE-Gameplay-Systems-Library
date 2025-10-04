@@ -58,17 +58,17 @@ protected:
 	// Blackboard Key Variables
 
 	/** This is the blackboard key responsible to storage the sensed actor reference. */
-	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "AI | Blackboard Keys")
 	FName SensedActorKeyName = "TargetPlayer";
 
 	/** This is the blackboard key responsible to storage the answer to: Am i seeing someone? */
-	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "AI | Blackboard Keys")
 	FName LineOfSightKeyName = "HasLineOfSight";
 
-	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "AI | Blackboard Keys")
 	FName LastKnownLocationKeyName = "LastKnownLocation";
 
-	UPROPERTY(EditAnywhere, Category = "AI | Blackboard Keys")
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "AI | Blackboard Keys")
 	FName SoundLocationKeyName = "SoundLocation";
 
 };
