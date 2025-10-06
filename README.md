@@ -70,6 +70,23 @@ A plug-and-play Actor Component that adds a modular Health system to any charact
     * All variables (`MaxHealth`, `MinHealth`, `IsDead`, etc.) are exposed to Blueprints for easy iteration.
     * All functions (`Die()`, `DamagePlayer()`, `HealPlayer()`, etc.) are all exposed to blueprints.
  
+### 5. Inventory Component
+A plug-and-play Actor Component that adds a complete modular Inventory System to any Actor you want. All parameters are exposed to Blueprints for easy tweaking by designers.
+
+* **Key Source Files:**
+    * [`UInventoryComponent.h`](Source/NewPortfolio/Public/InventoryComponent.h)
+    * [`UInventoryComponent.cpp`](Source/NewPortfolio/Private/InventoryComponent.cpp)
+    * [`UInventoryInterface.h`](Source/NewPortfolio/Public/InventoryInterface.h)
+    * [`UInventoryInterface.cpp`](Source/NewPortfolio/Private/InventoryInterface.cpp)
+ 
+  * **Features:**
+    * Clean communication via Items/Player/Events without using hard references like `CASTING`. All communications are via `Interfaces`.
+    * Written in C++ for maximum performance.
+    * Plug-and-play design.
+    * All variables are exposed to Blueprints for easy iteration.
+    * All functions are all exposed to blueprints.
+    * Most of the events can be changed via blueprints, using custom functions made by me in C++.
+ 
 ---
 
 ## How to Use This Repository
@@ -157,6 +174,22 @@ Um Actor Component também Plug-and-Play que implementa um sistema modular e com
     * Plug-and-play design.
     * Todas as variáveis (`MaxHealth`, `MinHealth`, `IsDead`, etc.) são expostas para blueprint para fácil iteração.
     * As funções (`Die()`, `HealPlayer()`, `DamagePlayer()`, etc.) estão todas expostas para blueprints também.
+ 
+  ### 5. Inventory Component
+Um Actor Component Plug-And-Play que adiciona um sistema de inventário completo e modular para qualquer ator que você quiser. Todas as funções, eventos e parâmetros são expostos para Blueprint para, além de rápida iteração por designers, ajudam também a montar a lógica dividida entre Blueprint/C++.
+
+* **Principais Arquivos de Código:**
+    * [`UInventoryComponent.h`](Source/NewPortfolio/Public/InventoryComponent.h)
+    * [`UInventoryComponent.cpp`](Source/NewPortfolio/Private/InventoryComponent.cpp)
+    * [`UInventoryInterface.h`](Source/NewPortfolio/Public/InventoryInterface.h)
+    * [`UInventoryInterface.cpp`](Source/NewPortfolio/Private/InventoryInterface.cpp)
+ 
+  * **Funcionalidades:**
+    * Escrito em C++.
+    * Fácil adição ao seu Player.
+    * Variáveis e funções expostas para Blueprints.
+    * Comunicação leve e performática. Não há `CASTING` direto. A comunicação é feita via `Interfaces`.
+    * A maioria dos eventos podem ser alterados nas Blueprints por funções criadas por mim em C++.
 
 ---
 
