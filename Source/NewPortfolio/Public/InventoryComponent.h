@@ -24,6 +24,9 @@ protected:
 	UPROPERTY (VisibleAnywhere, BlueprintReadOnly, Category = "Inventory")
 	TArray<TObjectPtr<UInventoryDataAsset>> Items;
 
+	UPROPERTY (EditAnywhere, BlueprintReadOnly, Category = "Inventory")
+	int32 InventorySpace = 10;
+
 public:
 
 		
