@@ -15,6 +15,6 @@ class NEWPORTFOLIO_API IInteractionInterface
 
 public:
 
-	UFUNCTION (BlueprintCallable, BlueprintImplementableEvent, Category = Interaction)
+	UFUNCTION (BlueprintCallable, BlueprintNativeEvent, Category = Interaction)
 	void Interact(AActor* PlayerThatInteracted);
 };
