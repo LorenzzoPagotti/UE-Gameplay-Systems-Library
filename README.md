@@ -80,8 +80,8 @@ A plug-and-play Actor Component that adds a complete modular Inventory System to
     * [`UInventoryInterface.cpp`](Source/NewPortfolio/Private/InventoryInterface.cpp)
     * [`UItemType.h`](Source/NewPortfolio/Public/ItemType.h)
     * [`UItemType.cpp`](Source/NewPortfolio/Private/ItemType.cpp)
-    * [`UItemDataAsset.h`](Source/NewPortfolio/Public/ItemDataAsset.h)
-    * [`UItemDataAsset.cpp`](Source/NewPortfolio/Private/ItemDataAsset.cpp)
+    * [`UInventoryDataAsset.h`](Source/NewPortfolio/Public/InventoryDataAsset.h)
+    * [`UInventoryDataAsset.cpp`](Source/NewPortfolio/Private/InventoryDataAsset.cpp)
  
   * **Features:**
     * Clean communication via Items/Player/Events without using hard references like `CASTING`. All communications are via `Interfaces`.
@@ -189,8 +189,8 @@ Um Actor Component Plug-And-Play que adiciona um sistema de inventário completo
     * [`UInventoryInterface.cpp`](Source/NewPortfolio/Private/InventoryInterface.cpp)
     * [`UItemType.h`](Source/NewPortfolio/Public/ItemType.h)
     * [`UItemType.cpp`](Source/NewPortfolio/Private/ItemType.cpp)
-    * [`UItemDataAsset.h`](Source/NewPortfolio/Public/ItemDataAsset.h)
-    * [`UItemDataAsset.cpp`](Source/NewPortfolio/Private/ItemDataAsset.cpp)
+    * [`UInventoryDataAsset.h`](Source/NewPortfolio/Public/InventoryDataAsset.h)
+    * [`UInventoryDataAsset.cpp`](Source/NewPortfolio/Private/InventoryDataAsset.cpp)
 
  
   * **Funcionalidades:**
